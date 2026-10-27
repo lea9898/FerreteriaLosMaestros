@@ -1,0 +1,121 @@
+/* Tema Ferretería Los Maestros: azul noche + naranja (misma identidad que la Evaluación 1) */
+:root {
+  --lm-navy: #0d1b2a;
+  --lm-navy-2: #1b365d;
+  --lm-orange: #e0731a;
+  --lm-orange-dark: #c1600f;
+  --lm-orange-soft: #fdeee0;
+  --lm-bg: #f4f6f9;
+  --lm-radius: 14px;
+  --lm-shadow: 0 2px 10px rgba(13, 27, 42, 0.07);
+  --lm-shadow-lg: 0 12px 28px rgba(13, 27, 42, 0.16);
+
+  --bs-primary: var(--lm-orange);
+  --bs-primary-rgb: 224, 115, 26;
+  --bs-link-color: var(--lm-orange-dark);
+  --bs-link-hover-color: var(--lm-navy);
+  --bs-body-bg: var(--lm-bg);
+  --bs-body-color: #212529;
+  --bs-font-sans-serif: 'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html, body, #root { min-height: 100vh; }
+#root { display: flex; flex-direction: column; }
+h1, h2, h3, h4, h5, h6 { color: var(--lm-navy); font-weight: 700; }
+
+/* Botones */
+.btn-primary {
+  --bs-btn-bg: var(--lm-orange); --bs-btn-border-color: var(--lm-orange);
+  --bs-btn-hover-bg: var(--lm-orange-dark); --bs-btn-hover-border-color: var(--lm-orange-dark);
+  --bs-btn-active-bg: var(--lm-orange-dark); --bs-btn-active-border-color: var(--lm-orange-dark);
+  --bs-btn-disabled-bg: var(--lm-orange); --bs-btn-disabled-border-color: var(--lm-orange);
+  font-weight: 600;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--lm-orange-dark); --bs-btn-border-color: var(--lm-orange);
+  --bs-btn-hover-bg: var(--lm-orange); --bs-btn-hover-border-color: var(--lm-orange);
+  --bs-btn-active-bg: var(--lm-orange-dark); --bs-btn-active-border-color: var(--lm-orange-dark);
+  font-weight: 600;
+}
+.btn { border-radius: 10px; }
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+  border-color: var(--lm-orange);
+  box-shadow: 0 0 0 0.2rem rgba(224, 115, 26, 0.2);
+}
+.form-check-input:checked { background-color: var(--lm-orange); border-color: var(--lm-orange); }
+
+/* Navbar */
+.lm-navbar { background: var(--lm-navy); border-bottom: 3px solid var(--lm-orange); position: sticky; top: 0; z-index: 50; }
+.lm-navbar .brand-logo { width: 40px; height: 40px; }
+.lm-navbar .navbar-brand { color: #fff; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.lm-navbar .navbar-brand strong { color: var(--lm-orange); }
+.lm-navbar .nav-link { color: rgba(255, 255, 255, 0.8); font-weight: 500; border-radius: 8px; padding: 8px 14px; margin-left: 4px; }
+.lm-navbar .nav-link:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.lm-navbar .nav-link.active { background: var(--lm-orange); color: #fff; }
+
+/* Hero del catálogo */
+.lm-hero {
+  position: relative; overflow: hidden; color: #fff;
+  background: linear-gradient(120deg, var(--lm-navy) 0%, var(--lm-navy-2) 100%);
+  border-radius: 18px; padding: 2.5rem; box-shadow: var(--lm-shadow-lg);
+}
+.lm-hero::after {
+  content: ''; position: absolute; right: -80px; top: -80px; width: 280px; height: 280px;
+  border-radius: 50%; background: rgba(224, 115, 26, 0.25);
+}
+.lm-hero h1 { color: #fff; font-size: clamp(1.7rem, 4vw, 2.4rem); position: relative; z-index: 1; }
+.lm-hero p { color: rgba(255, 255, 255, 0.85); max-width: 52ch; position: relative; z-index: 1; }
+.lm-eyebrow {
+  display: inline-block; background: rgba(224, 115, 26, 0.22); color: #f6b072;
+  font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 0.9rem; position: relative; z-index: 1;
+}
+.lm-hero-stats { display: flex; gap: 2rem; margin: 1.5rem 0 0; padding: 0; list-style: none; position: relative; z-index: 1; }
+.lm-hero-stats strong { display: block; font-size: 1.5rem; color: var(--lm-orange); }
+.lm-hero-stats span { font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); }
+
+/* Panel de filtros / contenedores */
+.lm-panel { background: #fff; border: 1px solid #e3e7ed; border-radius: var(--lm-radius); box-shadow: var(--lm-shadow); padding: 1.1rem 1.25rem; }
+
+/* Tarjetas de producto */
+.lm-card {
+  background: #fff; border: 1px solid #e3e7ed; border-radius: var(--lm-radius); overflow: hidden;
+  box-shadow: var(--lm-shadow); transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.lm-card:hover { transform: translateY(-4px); box-shadow: var(--lm-shadow-lg); border-color: var(--lm-orange); }
+.lm-card-img { background: linear-gradient(180deg, #fff, #f1f3f6); padding: 12px; }
+.lm-card-img img { background: transparent !important; border-radius: 8px; }
+.lm-tag {
+  display: inline-block; background: var(--lm-orange-soft); color: var(--lm-orange-dark);
+  font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+  text-transform: uppercase; letter-spacing: 0.03em;
+}
+.lm-price { color: var(--lm-navy); font-weight: 800; font-size: 1.3rem; }
+
+/* Detalle */
+.lm-detail-img { background: linear-gradient(180deg, #fff, #eef1f5); border-radius: var(--lm-radius); padding: 1.5rem; border: 1px solid #e3e7ed; }
+.lm-detail-price { color: var(--lm-navy); font-weight: 800; font-size: 2.2rem; }
+
+/* Tabla de administración */
+.lm-table-wrap { background: #fff; border: 1px solid #e3e7ed; border-radius: var(--lm-radius); box-shadow: var(--lm-shadow); overflow: hidden; }
+.lm-table-wrap .table { margin: 0; --bs-table-striped-bg: #f8fafc; --bs-table-hover-bg: var(--lm-orange-soft); }
+.lm-table-wrap thead th {
+  background: var(--lm-navy); color: #fff; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.04em; border: 0; padding: 0.85rem;
+}
+.lm-table-wrap td { padding: 0.7rem 0.85rem; }
+.lm-thumb { border-radius: 8px; border: 1px solid #e3e7ed; }
+
+/* Insignias */
+.badge { border-radius: 999px; font-weight: 600; padding: 0.4em 0.8em; }
+
+/* Pie de página */
+.lm-footer { background: var(--lm-navy); color: rgba(255, 255, 255, 0.75); margin-top: auto; border-top: 3px solid var(--lm-orange); }
+.lm-footer strong { color: #fff; }
+.lm-footer a { color: rgba(255, 255, 255, 0.75); text-decoration: none; }
+.lm-footer a:hover { color: var(--lm-orange); }
+
+@media (max-width: 576px) {
+  .lm-hero { padding: 1.5rem; }
+  .lm-hero-stats { gap: 1.25rem; }
+}
